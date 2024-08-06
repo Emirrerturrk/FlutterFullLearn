@@ -35,14 +35,14 @@ class _TabLearnState extends State<TabLearn> with TickerProviderStateMixin {
           onPressed: () {
             _tabController.animateTo(_MyTabViews.Home.index);
           },
-          shape: CircleBorder(),
+          shape: const CircleBorder(),
           backgroundColor: Colors.white,
         ),
         floatingActionButtonLocation:
             FloatingActionButtonLocation.miniCenterDocked,
         bottomNavigationBar: BottomAppBar(
           notchMargin: notchedValue,
-          shape: CircularNotchedRectangle(),
+          shape: const CircularNotchedRectangle(),
           child: myTabView(),
         ),
         appBar: AppBar(),
@@ -55,18 +55,18 @@ class _TabLearnState extends State<TabLearn> with TickerProviderStateMixin {
     return TabBar(
         onTap: (int index) {},
         controller: _tabController,
-        tabs: _MyTabViews.values.map((e) => Tab(text: "${e.name}")).toList());
+        tabs: _MyTabViews.values.map((e) => Tab(text: e.name)).toList());
   }
 
   TabBarView tabBarView() {
     return TabBarView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         controller: _tabController,
         children: [
-          ButtonLearn(),
-          ImageLearn(),
+          const ButtonLearn(),
+          const ImageLearn(),
           TextLearnView(),
-          TextFiledLearn()
+          const TextFiledLearn()
         ]);
   }
 }

@@ -1,8 +1,19 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/202/alert_lean.dart';
+import 'package:flutter_full_learn/202/animated_learn_view.dart';
+import 'package:flutter_full_learn/202/cache/shader_cache_learn.dart';
+import 'package:flutter_full_learn/202/form_learn_view.dart';
 import 'package:flutter_full_learn/202/model_learn_view.dart';
+import 'package:flutter_full_learn/202/oop_learn_view.dart';
+import 'package:flutter_full_learn/202/service/serive_learn_view.dart';
+import 'package:flutter_full_learn/202/service/service_post_learn_view.dart';
+import 'package:flutter_full_learn/202/sheet_learn.dart';
+import 'package:flutter_full_learn/202/state_manage/state_manage_learn_view.dart';
 import 'package:flutter_full_learn/202/tab_learn.dart';
+import 'package:flutter_full_learn/202/theme/dark_theme.dart';
+import 'package:flutter_full_learn/202/widget_size_enum_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,29 +25,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData.dark().copyWith(
-          bottomAppBarTheme:
-              BottomAppBarTheme(shape: CircularNotchedRectangle()),
-          tabBarTheme: TabBarTheme(labelColor: Colors.white),
-          progressIndicatorTheme:
-              const ProgressIndicatorThemeData(color: Colors.cyanAccent),
-          listTileTheme:
-              const ListTileThemeData(contentPadding: EdgeInsets.zero),
-          appBarTheme: const AppBarTheme(
-            centerTitle: true,
-            backgroundColor: Colors.transparent,
-            elevation: 5,
-          ),
-          cardTheme: CardTheme(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              color: Colors.transparent,
-              margin: const EdgeInsets.all(10),
-              elevation: 20,
-              surfaceTintColor: Colors.deepPurpleAccent),
-        ),
+        theme: DarkTheme().theme,
         debugShowCheckedModeBanner: false,
-        home: const ModelLearnView());
+        home: const AlertLearn());
   }
 }

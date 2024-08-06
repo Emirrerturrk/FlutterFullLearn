@@ -14,7 +14,6 @@ class _ModelLearnViewState extends State<ModelLearnView> {
   var user9 = PostModel8(body: "a");
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     final user1 = PostModel1()..userId = 1;
     user1.body = "hi";
