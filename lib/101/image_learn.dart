@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_full_learn/product/global/resource_context.dart';
+import 'package:provider/provider.dart';
 
 class ImageLearn extends StatelessWidget {
   const ImageLearn({super.key});
@@ -6,7 +8,19 @@ class ImageLearn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {
+                context.read<ResourceContext>().clear();
+              },
+              icon: const Icon(Icons.remove))
+        ],
+        title: Text(
+            textAlign: TextAlign.center,
+            context.read<ResourceContext>().model?.data?.length.toString() ??
+                ""),
+      ),
       body: Column(
         children: [
           SizedBox(
