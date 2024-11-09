@@ -15,8 +15,10 @@ import 'package:flutter_full_learn/202/tab_learn.dart';
 import 'package:flutter_full_learn/202/theme/dark_theme.dart';
 import 'package:flutter_full_learn/202/widget_size_enum_learn_view.dart';
 import 'package:flutter_full_learn/303/call_back_learn.dart';
+import 'package:flutter_full_learn/303/lottie_learn.dart';
 import 'package:flutter_full_learn/303/part/part_of_learn.dart';
 import 'package:flutter_full_learn/303/reqres_resource/view/reqres_view.dart';
+import 'package:flutter_full_learn/product/constant/project_items.dart';
 import 'package:flutter_full_learn/product/global/resource_context.dart';
 import 'package:flutter_full_learn/product/global/theme_notifier.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +33,7 @@ void main() {
         create: (context) => ThemeNotifier(),
       )
     ],
-    builder: (context, child) => MyApp(),
+    builder: (context, child) => const MyApp(),
   ));
 }
 
@@ -41,8 +43,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        title: ProjectItems.projectName,
         theme: context.watch<ThemeNotifier>().currentTheme,
         debugShowCheckedModeBanner: false,
-        home: const ReqresView());
+        home: const LottieLearn());
   }
 }
